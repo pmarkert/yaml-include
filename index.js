@@ -12,6 +12,8 @@ var YAML_TYPES = [YamlIncludeDirType, YamlIncludeFileType];
 var YAML_INCLUDE_SCHEMA = yaml.Schema.create(YAML_TYPES);
 var basefile = '';
 
+var resolver;
+
 // so we know where to find files referenced relative to the base file
 function setBaseFile(file) {
   this.YAML_VISITED_FILES.push(file);
@@ -30,11 +32,21 @@ function getBasePath() {
   return p.dirname(this.basefile);
 }
 
+function setResolver(resolver) {
+	this.resolver = resolver;
+}
+
+function getResolver(resolver) {
+	return this.resolver;
+}
+
 module.exports.YAML_INCLUDE_SCHEMA = YAML_INCLUDE_SCHEMA;
 module.exports.YAML_TYPES = YAML_TYPES;
 module.exports.YAML_VISITED_FILES = YAML_VISITED_FILES;
 module.exports.basefile = basefile;
 module.exports.setBaseFile = setBaseFile;
 module.exports.getBasePath = getBasePath;
+module.exports.setResolver = setResolver;
+module.exports.getResolver = getResolver;
 module.exports.YamlIncludeDirType = YamlIncludeDirType;
 module.exports.YamlIncludeFileType = YamlIncludeFileType;

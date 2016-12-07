@@ -28,10 +28,16 @@
   "author": "claylo",
   "license": "ISC",
   "dependencies": {
-    "debug": "^2.2.0",
-    "js-yaml": "^3.6.1",
+    "ava": "^0.16.0",
+    "codeclimate-test-reporter": "^0.4.0",
+    "coveralls": "^2.11.15",
+    "debug": "^2.3.3",
+    "js-yaml": "^3.7.0",
     "lodash.merge": "^4.6.0",
-    "recursive-readdir-sync": "^1.0.6"
+    "mocha-lcov-reporter": "^1.2.0",
+    "nyc": "^8.4.0",
+    "recursive-readdir-sync": "^1.0.6",
+    "travis-cov": "^0.2.5"
   },
   "devDependencies": {
     "ava": "^0.16.0",
